@@ -2,26 +2,26 @@ from docx import Document
 
 doc = Document("Questionario.docx")
 
-def extractWord (doc):
-    dados = []
+def extract (doc):
+    data = []
     for p in doc.paragraphs:
         text = p.text
         if ":" in text:
             response = text.split(":", 1)
-            dados.append(response)
-    return dados
-result = extractWord(doc) 
+            data.append(response)
+    return data
+result = extract(doc) 
 
 
-def tranform (dados):
-    limpeza = []
-    for l in dados:
+def transform (data):
+    cleaning = []
+    for l in data:
              question = l[0].replace("\xa0", " ").strip("._ ")
              response = l[1].strip()
-             limpeza.append([question,response])
-    return limpeza
-resultado = tranform(result)
-print(resultado)
+             cleaning.append([question,response])
+    return cleaning
+result = transform(result)
+print(result)
 
 
 
