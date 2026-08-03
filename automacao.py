@@ -1,6 +1,6 @@
 from docx import Document
 
-doc = Document("Questionario.docx")
+doc = Document("questionario.docx")
 
 def extract (doc):
     data = []
